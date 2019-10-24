@@ -332,13 +332,13 @@
 	<div class="article-content" id="article-content">
 		<h5 id="1、先下载JDBC："><a href="#1、先下载JDBC：" class="headerlink" title="1、先下载JDBC："></a>1、先下载JDBC：</h5><p>JDBC代表Java数据库连接(<strong>J</strong>ava <strong>D</strong>ata<strong>b</strong>ase <strong>C</strong>onnectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据库连接的API。</p>
 <p>  到<a href="http://www.mvnrepository.com网站中，搜索mysql，点击列表第一个，如图下：" target="_blank" rel="noopener">www.mvnrepository.com网站中，搜索mysql，点击列表第一个，如图下：</a></p>
-<p><img src="D:%5Chexo%5Cimg%5C1416735-20180613200508697-1168870133.png" alt></p>
+<p><img src="D:%5Chexo%5Cblog%5Csource%5Cimg%5C1416735-20180613200508697-1168870133.png" alt></p>
 <p>下最新的版本8.0.11</p>
 <p><img src="https://images2018.cnblogs.com/blog/1416735/201806/1416735-20180613200650919-2038621696.png" alt="img"></p>
-<p><img src="D:%5Chexo%5Cimg%5C1416735-20180613200817537-2108748103.png" alt></p>
+<p><img src="D:%5Chexo%5Cblog%5Csource%5Cimg%5C1416735-20180613200817537-2108748103.png" alt></p>
 <p>下载成功：</p>
-<p><img src="D:%5Chexo%5Cimg%5C1416735-20180613200946755-1246747290.png" alt></p>
-<h5 id="2、打开eclipse-创建一个Dynamic-Web-Project项目"><a href="#2、打开eclipse-创建一个Dynamic-Web-Project项目" class="headerlink" title="2、打开eclipse,创建一个Dynamic Web Project项目"></a>2、打开eclipse,创建一个Dynamic Web Project项目</h5><p><img src="D:%5Chexo%5Cimg%5C1.png" alt></p>
+<p><img src="D:%5Chexo%5Cblog%5Csource%5Cimg%5C1416735-20180613200946755-1246747290.png" alt></p>
+<h5 id="2、打开eclipse-创建一个Dynamic-Web-Project项目"><a href="#2、打开eclipse-创建一个Dynamic-Web-Project项目" class="headerlink" title="2、打开eclipse,创建一个Dynamic Web Project项目"></a>2、打开eclipse,创建一个Dynamic Web Project项目</h5><p><img src="D:%5Chexo%5Cblog%5Csource%5Cimg%5C1.png" alt></p>
 <p>在lib中插入mysql-connector文件</p>
 <h5 id="3-打开-NewFile-jsp文件"><a href="#3-打开-NewFile-jsp文件" class="headerlink" title="3.打开 NewFile.jsp文件"></a>3.打开 NewFile.jsp文件</h5><p>插入下面代码</p>
 <p>String driver = “com.mysql.jdbc.Driver”;<br>    // URL指向要访问的数据库名test1<br>    String url = “jdbc:mysql://127.0.0.1:3306/test1”;<br>    // MySQL配置时的用户名<br>    String user = “root”;<br>    // Java连接MySQL配置时的密码<br>    String password = “root”;<br>    try {<br>    // 1 加载驱动程序<br>    Class.forName(driver);<br>    // 2 连接数据库<br>    Connection conn = DriverManager.getConnection(url, user, password);<br>    // 3 用来执行SQL语句<br>    Statement statement = conn.createStatement();<br>    // 要执行的SQL语句<br>    String sql = “select * from user”;<br>    ResultSet rs = statement.executeQuery(sql);<br>    String name = null;<br>    String mima=null;<br>    while (rs.next()) {<br>    name = rs.getString(“uName”);<br>    mima = rs.getString(“uPassWord”);<br>    out.println(name+”\t”+mima);<br>    }<br>    rs.close();<br>    conn.close();<br>    } catch (ClassNotFoundException e) {<br>    System.out.println(“Sorry,can`t find the Driver!”);<br>    e.printStackTrace();<br>    } catch (SQLException e) {<br>    e.printStackTrace();<br>    } catch (Exception e) {<br>    e.printStackTrace();<br>    }</p>
