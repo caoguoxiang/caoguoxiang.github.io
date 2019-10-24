@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      MySQL | QIFENGLE
+      Eclipse连接MySql 1 | QIFENGLE
     
   </title>
   <meta name="author" content="�����">
@@ -160,7 +160,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《MySQL》
+			当前文章&nbsp;:&nbsp;《Eclipse连接MySql 1》
 		
 	</p>
 
@@ -277,8 +277,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/10/15/MySQL/" itemprop="url">
-		MySQL
+	<a href="/2019/10/24/Eclipse连接MySql-1/" itemprop="url">
+		Eclipse连接MySql 1
 	</a>
 
 	</div>
@@ -291,9 +291,9 @@
 
 	发布于
 
-	<a href="/2019/10/15/MySQL/" itemprop="url">
-		<time datetime="2019-10-15T13:37:43.000Z" itemprop="datePublished">
-	  		2019-10-15
+	<a href="/2019/10/24/Eclipse连接MySql-1/" itemprop="url">
+		<time datetime="2019-10-24T05:35:18.000Z" itemprop="datePublished">
+	  		2019-10-24
 	  </time>
 	</a>
 	&nbsp;
@@ -309,9 +309,9 @@
 
 	更新于
 
-	<a href="/2019/10/15/MySQL/" itemprop="url">
-		<time datetime="2019-10-15T13:37:43.000Z" itemprop="dateUpdated">
-	  		2019-10-17
+	<a href="/2019/10/24/Eclipse连接MySql-1/" itemprop="url">
+		<time datetime="2019-10-24T05:35:18.000Z" itemprop="dateUpdated">
+	  		2019-10-24
 	  </time>
 	</a> 
 
@@ -330,22 +330,18 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h2 id="数据简介"><a href="#数据简介" class="headerlink" title="数据简介"></a>数据简介</h2><p>​        人类在进化的过程中，创造了数字、文字、符号等来进行数据的记录，但是承受着认知能力和创造能力的提升，数据量越来越大，对于数据的记录和准确查找，成为了一个重大难题计算机诞生后，数据开始在计算机中存储并计算，并设计出了数据库系统数据库系统解决的问题：持久化存储，优化读写，保证数据的有效性当前使用的数据库，主要分为两类<br>​        文档型，如sqlite，就是一个文件，通过对文件的复制完成数据库的复制<br>​        服务型，如mysql、postgre，数据存储在一个物理文件中，但是需要使用终端以tcp/ip协议连接，进        行    数据库的读写操作</p>
-<h2 id="E-R模型"><a href="#E-R模型" class="headerlink" title="E-R模型"></a>E-R模型</h2><p>当前物理的数据库都是按照E-R模型进行设计的<br>E表示entry，实体<br>R表示relationship，关系<br>一个实体转换为数据库中的一个表<br>关系描述两个实体之间的对应规则，包括<br>    一对一<br>    一对多<br>    多对多<br>关系转换为数据库表中的一个列 *在关系型数据库中一行就是一个对象<br>三范式<br>经过研究和对使用中问题的总结，对于设计数据库提出了一些规范，这些规范被称为范式<br>第一范式（1NF)：列不可拆分<br>第二范式（2NF)：唯一标识<br>第三范式（3NF)：引用主键<br>说明：后一个范式，都是在前一个范式的基础上建立的<br>数据完整性<br>一个数据库就是一个完整的业务单元，可以包含多张表，数据被存储在表中<br>在表中为了更加准确的存储数据，保证数据的正确有效，可以在创建表的时候，为表添加一些强制性的验证，包括数据字段的类型、约束</p>
-<p>mysql数据库<br>字段类型<br>在mysql中包含的数据类型很多，这里主要列出来常用的几种<br>数字：int（整数）,decimal（浮点数）<br>字符串：char（不可改变字符数）,varchar（有限长度，可变字符       数）,text（大文本）<br>日期：datetime<br>布尔：bit<br>            编码问题： gb2312  UTF-8</p>
-<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><p>主键primary key(only 1)<br>非空not null<br>惟一unique<br>默认default<br>外键foreign key</p>
-<p>使用命令连接<br>命令操作方式，在工作中使用的更多一些，所以要达到熟练的程度<br>打开终端，运行命令<br>mysql -uroot -p<br>回车后输入密码，当前设置的密码为mysql</p>
-<p>退出登录<br>quit或exit<br>登录成功后，输入如下命令查看效果<br>查看版本：select version();<br>显示当前时间：select now();<br>注意：在语句结尾要使用分号;<br>远程连接<br>一般在公司开发中，可能会将数据库统一搭建在一台服务器上，所有开发人员共用一个数据库，而不是在自己的电脑中配置一个数据库<br>运行命令<br>mysql -hip地址 -uroot -p<br>-h后面写要连接的主机ip地址<br>-u后面写连接的用户名<br>-p回车后写密码</p>
-<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p>查看当前所有数据库<br>show databases;</p>
-<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>create database 数据库名 charset=utf8;</p>
-<h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><p>drop database 数据库名;<br>切换数据库<br>use 数据库名;<br>查看当前选择的数据库<br>select database();<br>表操作<br>查看当前数据库中所有表<br>show tables;</p>
-<h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><p>auto_increment表示自动增长<br>create table 表名(列及类型);<br>如：<br>create table students(<br>id int auto_increment primary key,<br>sname varchar(10) not null<br>);<br>create table 表名(键 类型 自增 主键 非空)<br>        create table students(<br>        id int auto_increment primary key not null, #主键形式一致<br>        name varchar(10) not null,<br>        birthiday datetime,<br>        gender bit default 1,<br>        isDelet bit default 0<br>        );</p>
-<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><p>alter table 表名 add|change|drop 列名 类型;<br>如：<br>alter table students add birthday datetime;</p>
-<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><p>drop table 表名;<br>查看表结构<br>desc 表名;<br>更改表名称<br>rename table 原表名 to 新表名;<br>查看表的创建语句<br>show create table ‘表名’;</p>
-<h2 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h2><p>查询<br>select * from 表名；<br>增加<br>全列插入：insert into 表名 values(…)<br>缺省插入：insert into 表名(列1,…) values(值1,…)<br>同时插入多条数据：insert into 表名 values(…),(…)…;<br>或insert into 表名(列1,…) values(值1,…),(值1,…)…;<br>主键列是自动增长，但是在全列插入时需要占位，通常使用0，插入成功后以实际数据为准<br>修改<br>update 表名 set 列1=值1,… where 条件<br>删除<br>delete from 表名 where 条件<br>逻辑删除，本质就是修改操作update<br>alter table students add isdelete bit default 0;<br>如果需要删除则<br>update students isdelete=1 where …;</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>完整的select语句<br>select distinct *<br>from 表名<br>where ….<br>group by … having …<br>order by …<br>limit star,count<br>执行顺序为：<br>from 表名<br>where ….<br>group by …<br>select distinct *<br>having …<br>order by …<br>limit star,count<br>实际使用中，只是语句中某些部分的组合，而不是全部</p>
-<p>备份与恢复<br>数据备份<br>进入超级管理员<br>sudo -s<br>进入mysql库目录<br>cd /var/lib/mysql<br>运行mysqldump命令<br>mysqldump –uroot –p 数据库名 &gt; ~/Desktop/备份文件.sql;<br>按提示输入mysql的密码<br>数据恢复<br>连接mysqk，创建数据库<br>退出连接，执行如下命令<br>mysql -uroot –p 数据库名 &lt; ~/Desktop/备份文件.sql<br>根据提示输入mysql密码</p>
-<p>创建数据库：create database 数据库名 charset=utf8;<br>创建表：create table 表名 （字段 类型 约束）;<br>            id int auto_increment primary key not null,<br>插入数据：insert into 表名 (…) vakues(…);<br>修改数据：update 表名 set 字段名=值 , …..<br>删除数据：delete from 表名;<br>                    逻辑删除： 添加isDelete 字段，然后作修改<br>查询表：select*from 表名</p>
+		<h5 id="1、先下载JDBC："><a href="#1、先下载JDBC：" class="headerlink" title="1、先下载JDBC："></a>1、先下载JDBC：</h5><p>JDBC代表Java数据库连接(<strong>J</strong>ava <strong>D</strong>ata<strong>b</strong>ase <strong>C</strong>onnectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据库连接的API。</p>
+<p>  到<a href="http://www.mvnrepository.com" target="_blank" rel="noopener">www.mvnrepository.com</a></p>
+<p>网站中，搜索mysql，点击列表第一个，如图下：</p>
+<p><img src="/.com//D:%5Chexo%5Cblog%5Csource_posts%5Ceclipse%E8%BF%9E%E6%8E%A5mysql%5C1416735-20180613200508697-1168870133.png" alt></p>
+<p>下最新的版本8.0.11</p>
+<p><img src="/.com//D:%5Chexo%5Cblog%5Csource_posts%5Ceclipse%E8%BF%9E%E6%8E%A5mysql%5C1416735-20180613200817537-2108748103.png" alt></p>
+<p>下载成功：</p>
+<p><img src="/.com//D:%5Chexo%5Cblog%5Csource_posts%5Ceclipse%E8%BF%9E%E6%8E%A5mysql%5C1416735-20180613200946755-1246747290.png" alt></p>
+<h5 id="2、打开eclipse-创建一个Dynamic-Web-Project项目"><a href="#2、打开eclipse-创建一个Dynamic-Web-Project项目" class="headerlink" title="2、打开eclipse,创建一个Dynamic Web Project项目"></a>2、打开eclipse,创建一个Dynamic Web Project项目</h5><p><img src="/.com//D:%5Chexo%5Cblog%5Csource_posts%5Ceclipse%E8%BF%9E%E6%8E%A5mysql%5C1.png" alt></p>
+<p>在lib中插入mysql-connector文件</p>
+<h5 id="3-打开-NewFile-jsp文件"><a href="#3-打开-NewFile-jsp文件" class="headerlink" title="3.打开 NewFile.jsp文件"></a>3.打开 NewFile.jsp文件</h5><p>插入下面代码 更改相应信息即可</p>
+<p>String driver = “com.mysql.jdbc.Driver”;<br>    // URL指向要访问的数据库名test1<br>    String url = “jdbc:mysql://127.0.0.1:3306/test1”;<br>    // MySQL配置时的用户名<br>    String user = “root”;<br>    // Java连接MySQL配置时的密码<br>    String password = “root”;<br>    try {<br>    // 1 加载驱动程序<br>    Class.forName(driver);<br>    // 2 连接数据库<br>    Connection conn = DriverManager.getConnection(url, user, password);<br>    // 3 用来执行SQL语句<br>    Statement statement = conn.createStatement();<br>    // 要执行的SQL语句<br>    String sql = “select * from user”;<br>    ResultSet rs = statement.executeQuery(sql);<br>    String name = null;<br>    String mima=null;<br>    while (rs.next()) {<br>    name = rs.getString(“uName”);<br>    mima = rs.getString(“uPassWord”);<br>    out.println(name+”\t”+mima);<br>    }<br>    rs.close();<br>    conn.close();<br>    } catch (ClassNotFoundException e) {<br>    System.out.println(“Sorry,can`t find the Driver!”);<br>    e.printStackTrace();<br>    } catch (SQLException e) {<br>    e.printStackTrace();<br>    } catch (Exception e) {<br>    e.printStackTrace();<br>    }</p>
 	
 	</div>
 	
@@ -364,12 +360,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/10/24/Eclipse连接MySql-1/" title="Eclipse连接MySql 1" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/10/11/Java面向对象总结/" title="Java面向对象总结" rel="next">
+			<a href="/2019/10/15/MySQL/" title="MySQL" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -390,22 +382,22 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/10/24/Eclipse连接MySql-1/" title="Eclipse连接MySql 1">
-								Eclipse连接MySql 1			
+							<a class="relate-post-title" href="/2019/10/15/MySQL/" title="MySQL">
+								MySQL			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								十月 24日, 2019				
+								十月 15日, 2019				
 							</p>
 							<p class="relate-post-content">
-								1、先下载JDBC：JDBC代表Java数据库连接(Java Database Connectivity)，它是用于Java编程语言和数据库之间的数据库无关连接的标准Java API，换句话说：JDBC是用于在Java语言编程中与数据...
+								数据简介​        人类在进化的过程中，创造了数字、文字、符号等来进行数据的记录，但是承受着认知能力和创造能力的提升，数据量越来越大，对于数据的记录和准确查找，成为了一个重大难题计算机诞生后，数据开始在计算机中存储并计算，并设计...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2019/10/24/Eclipse连接MySql-1/" title="Eclipse连接MySql 1">				
+							<a href="/2019/10/15/MySQL/" title="MySQL">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/unsplash.jpg" alt="Eclipse连接MySql 1"/>
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/unsplash.jpg" alt="MySQL"/>
 							</a>
 						</div>
 					</li>											
